@@ -22,6 +22,13 @@ body {
   width: auto;
 }
 
+.score-table td,
+.score-table th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
 @media screen and (min-width: 1024px) {
   .container {
     max-width: 960px;
