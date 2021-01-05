@@ -19,15 +19,16 @@
   </section>
 
 <!--  user section (choosing) -->
-  <section>
-    <button>Rock</button>
-    <button>Paper</button>
-    <button>Scissors</button>
+  <section class="player-controls">
+    <button data-type="rock" type="button">Rock</button>
+    <button data-type="paper" type="button">Paper</button>
+    <button data-type="scissors" type="button">Scissors</button>
   </section>
 
 <!--  players section (result) -->
   <section>
-    <h1>You Won!</h1>
+    <h1><span id="player-option"></span> VS <span id="computer-option"></span></h1>
+    <h1 id="round-status">You Won!</h1>
   </section>
 
 <!--  score section-->
