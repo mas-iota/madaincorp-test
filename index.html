@@ -7,32 +7,34 @@
 
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/app.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
 <main class="container">
-  <h1>Rock paper scissors game!</h1>
+  <h1 class="is-title is-size-2 text-center">Rock paper scissors game!</h1>
 
 <!--  controls section-->
   <section>
-    <button class="reset-btn">Restart the game</button>
+    <img src="images/reset.png" alt="reset-img" class="reset-img is-clickable">
   </section>
 
 <!--  user section (choosing) -->
-  <section class="player-controls">
-    <button data-type="rock" type="button">Rock</button>
-    <button data-type="paper" type="button">Paper</button>
-    <button data-type="scissors" type="button">Scissors</button>
+  <section class="player-controls text-center">
+    <img data-type="rock" src="images/rock.png" alt="rock-img" class="is-clickable">
+    <img data-type="paper" src="images/paper.png" alt="paper-img" class="is-clickable">
+    <img data-type="scissors" src="images/scissors.png" alt="scissors-img" class="is-clickable">
   </section>
 
 <!--  players section (result) -->
   <section>
-    <h1><span id="player-option"></span> VS <span id="computer-option"></span></h1>
-    <h1 id="round-status"></h1>
+    <h1 class="is-title text-center"><span id="player-option"></span> VS <span id="computer-option"></span></h1>
+    <h1 class="is-title is-size-1 text-center" id="round-status"></h1>
   </section>
 
 <!--  score section-->
-  <section>
-    <h1>Scores:</h1>
+  <section class="score-table">
+    <h1 class="is-title text-center">Scores:</h1>
     <table class="score-table">
       <thead>
       <tr>

@@ -1,8 +1,8 @@
 import { getRandomOption } from './util.js'
 
 const score = { computer: 0, player: 0 }
-const playerCtrlBtns = document.querySelectorAll('.player-controls button')
-const resetBtn = document.querySelector('.reset-btn')
+const playerCtrlBtns = document.querySelectorAll('.player-controls img')
+const resetBtn = document.querySelector('.reset-img')
 
 playerCtrlBtns.forEach((btn) => btn.addEventListener('click', play))
 resetBtn.addEventListener('click', reset)

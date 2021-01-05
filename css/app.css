@@ -10,6 +10,7 @@ body {
 }
 
 body {
+  font-family: 'Roboto', sans-serif;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -20,13 +21,72 @@ body {
   margin: 0 auto;
   position: relative;
   width: auto;
+  padding: 5rem 0;
 }
 
+.is-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+}
+.is-title.is-size-1 {
+  font-size: 4rem;
+}
+.is-title.is-size-2 {
+  font-size: 3rem;
+}
+
+.reset-img {
+  margin: 0 auto;
+  display: block;
+  width: 30px;
+  height: auto;
+}
+
+.is-clickable {
+  cursor: pointer;
+}
+
+.player-controls {
+  padding: 3rem;
+}
+.player-controls img {
+  margin: 0 1rem;
+  width: 80px;
+  height: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.score-table table {
+  margin: 0 auto;
+}
 .score-table td,
 .score-table th {
   border: 1px solid #dddddd;
   text-align: center;
   padding: 8px;
+}
+.score-table table tfoot td,
+.score-table table thead th {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .is-title.is-size-1 {
+    font-size: 2rem !important;
+  }
+  .is-title.is-size-2 {
+    font-size: 1.5rem;
+  }
+
+  .player-controls img {
+    width: 60px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
