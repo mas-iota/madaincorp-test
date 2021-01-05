@@ -19,35 +19,57 @@ function play(e) {
     if (computerOption === 'paper') {
       // c win
       status = 'Lost!'
+      log('computer')
     } else if (computerOption === 'scissors') {
       // u win
       status = 'Won!'
+      log('player')
     }
   } else if (playerOption === 'paper') {
     if (computerOption === 'scissors') {
       // c win
       status = 'Lost!'
-
+      log('computer')
     } else if (computerOption === 'rock') {
       // u win
       status = 'Won!'
-
+      log('player')
     }
   } else if (playerOption === 'scissors') {
     if (computerOption === 'rock') {
       // c win
       status = 'Lost!'
-
+      log('computer')
     } else if (computerOption === 'paper') {
       // u win
       status = 'Won!'
-
+      log('player')
     }
   }
 
   document.querySelector('#round-status').innerText = status
 }
 
+function log(winner) {
+  score[winner]++
+
+  let tableRef = document.querySelector('.score-table').getElementsByTagName('tbody')[0]
+  // Insert a row at the end of the table
+  let newRow = tableRef.insertRow(-1)
+  // Insert a cell in the row at index 0
+  let playerCell = newRow.insertCell(0)
+  let computerCell = newRow.insertCell(1)
+
+  // Append a text node to the cell
+  let winnerText = document.createTextNode('1')
+  let loserText = document.createTextNode('0')
+
+  playerCell.appendChild(winner === 'player' ? winnerText : loserText);
+  computerCell.appendChild(winner === 'computer' ? winnerText : loserText)
+
+  document.querySelector('#computer-score').innerText = score.computer
+  document.querySelector('#player-score').innerText = score.player
+}
 // 1- click on rock / paper / scissors
 
 // fn play()
