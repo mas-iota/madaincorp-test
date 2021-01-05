@@ -1,9 +1,11 @@
 import { getRandomOption } from './util.js'
 
-let playerCtrlBtns = document.querySelectorAll('.player-controls button')
-playerCtrlBtns.forEach((btn) => btn.addEventListener('click', play))
-
 const score = { computer: 0, player: 0 }
+const playerCtrlBtns = document.querySelectorAll('.player-controls button')
+const resetBtn = document.querySelector('.reset-btn')
+
+playerCtrlBtns.forEach((btn) => btn.addEventListener('click', play))
+resetBtn.addEventListener('click', reset)
 
 function play(e) {
   const playerOption = e.target.dataset.type
@@ -66,7 +68,20 @@ function log(winner) {
 
   playerCell.appendChild(winner === 'player' ? winnerText : loserText);
   computerCell.appendChild(winner === 'computer' ? winnerText : loserText)
+  updateScores()
+}
 
+function reset() {
+  const tableRef = document.querySelector('.score-table').getElementsByTagName('tbody')[0]
+  tableRef.innerHTML = ''
+
+  score.computer = 0
+  score.player = 0
+
+  updateScores()
+}
+
+function updateScores() {
   document.querySelector('#computer-score').innerText = score.computer
   document.querySelector('#player-score').innerText = score.player
 }
